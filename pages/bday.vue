@@ -1,15 +1,18 @@
 <template>
-  <div class="relative bg-gradient-to-r from-pink-500 to-blue-600 p-10 h-screen overflow-hidden">
+  <div class="relative bg-gradient-to-r from-pink-500 to-blue-500 p-10 h-screen overflow-hidden">
     <div>
-      <h1 class="text-5xl font-extrabold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent">Happy Birthday</h1>
-      <h1 class="text-4xl mt-5 font-bold text-center text-red-200">DITA NUR SABILA</h1>
+      <h1 class="text-5xl font-extrabold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent tracking-widest">Happy Birthday</h1>
+      <h1 class="text-4xl mt-5 font-bold text-center  text-white tracking-wider">DITA NUR SABILA</h1>
       <div class="flex items-center justify-center">
-        <img class="w-48 wh-48 mt-5 object-cover rounded-full" src="assets/img/dita.jpeg" alt="foto" />
+        <div class="rounded-full w-[450px] md:h-[450px] my-16  h-[300px]"> 
+
+          <img class="w-full h-full  bg-center object-cover rounded-full hover:scale-105 border-2 border-pink-300 hover:transition duration-300" src="assets/img/dita.jpeg" alt="foto" />
+        </div>
       </div>
-      <h2 class="text-center text-neutral-100 mt-3 text-balance">
+      <h2 class="text-center text-neutral-100 font-medium mt-3 text-balance">
         "Happy Birthday to me! Here's to a new chapter filled with hope, dreams, and endless possibilities. I embrace every step forward and trust that happiness is on the horizon. This year, I choose courage, joy, and self-belief."
       </h2>
-      <h1 class="text-2xl mt-5 text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent">23 AGUSTUS 2006</h1>
+      <h1 class="text-2xl mt-5 font-semibold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent">23 AGUSTUS 2006</h1>
     </div>
     <div v-for="balloon in balloons" :key="balloon.id" :style="balloon.style" class="balloon-container">
       <div class="balloon" :style="{ width: balloon.style.width, height: balloon.style.height, backgroundColor: balloon.color }"></div>
@@ -69,7 +72,12 @@ export default {
   },
 };
 </script>
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+body{
+  font-family: 'Marcellus SC', serif;
+}
+</style>
 <style scoped>
 .balloon-container {
   @apply absolute bottom-0 flex flex-col items-center;
