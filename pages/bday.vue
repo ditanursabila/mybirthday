@@ -1,19 +1,19 @@
 <template>
   <div class="relative bg-gradient-to-r from-pink-500 to-blue-500 p-10 h-screen overflow-hidden">
-    <div>
+    <div class="fade-in">
       <h1 class="text-5xl font-extrabold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent tracking-widest">Happy Birthday</h1>
       <h1 class="text-4xl mt-5 font-bold text-center text-white tracking-wider">DITA NUR SABILA</h1>
       <div class="flex items-center justify-center">
-        <div class="rounded-full w-[300px] md:h-[300px] my-10">
+        <div class="rounded-full w-[300px] md:h-[300px] my-10 fade-in">
           <img class="w-full h-full bg-center object-cover rounded-full hover:scale-105 border-2 border-pink-300 hover:transition duration-300" src="assets/img/dita.jpeg" alt="foto" />
         </div>
       </div>
-      <h2 class="text-center text-neutral-100 font-medium mt-3 text-balance">
+      <h2 class="text-center text-neutral-100 font-medium mt-3 text-balance fade-in">
         "Happy Birthday to me! Here's to a new chapter filled with hope, dreams, and endless possibilities. I embrace every step forward and trust that happiness is on the horizon. This year, I choose courage, joy, and self-belief."
       </h2>
-      <h1 class="text-2xl mt-5 font-semibold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent">23 AGUSTUS 2006</h1>
+      <h1 class="text-2xl mt-5 font-semibold text-center bg-gradient-to-br from-cyan-400 to-neutral-100 bg-clip-text text-transparent fade-in">23 AGUSTUS 2006</h1>
     </div>
-    <div v-for="balloon in balloons" :key="balloon.id" :style="balloon.style" class="balloon-container">
+    <div v-for="balloon in balloons" :key="balloon.id" :style="balloon.style" class="balloon-container fade-in">
       <div class="balloon" :style="{ width: balloon.style.width, height: balloon.style.height, backgroundColor: balloon.color }"></div>
       <svg class="string" viewBox="0 0 100 100">
         <path d="M50,0 Q60,20 50,40 Q40,60 50,80 Q60,100 50,120" stroke="currentColor" fill="transparent" />
@@ -78,6 +78,19 @@ body {
 }
 </style>
 <style scoped>
+.fade-in {
+  animation: fadeIn 1.5s ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .balloon-container {
   @apply absolute bottom-0 flex flex-col items-center;
   animation: flyUp infinite ease-in;
